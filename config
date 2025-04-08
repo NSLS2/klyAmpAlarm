@@ -1,0 +1,10 @@
+NAME=klyAmpAlarm
+
+PORT=4050
+
+USER=softioc
+
+HOST=klyAmpAlarm
+
+CHDIR="$CHDIR/iocBoot/iocklyAmpAlarm"
+EXEC="$CHDIR/st.cmd"

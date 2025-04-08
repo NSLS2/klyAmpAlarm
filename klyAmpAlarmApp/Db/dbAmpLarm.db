@@ -1,0 +1,30 @@
+record(calc, "$(DEV1)Flt:RFAmp_") {
+	field(CALC, "((A&&B&&C&&D&&(E==13)&&(F==3))?1:0)")
+	field(INPA, "$(P1){$(DEV2)}Pwr:Fwd-Sts CPP")
+	field(INPB, "$(P1){$(DEV3)}Amp-Sts CPP")
+	field(INPC, "$(P1){$(DEV4)]On-Set CPP")
+	field(INPD, "$(P1){$(DEV4)]Oper-Set CPP")
+	field(INPE, "$(P3)State-Sts CPP")
+	field(INPF, "$(P3)State-RB CPP")
+	field(FLNK, "$(DEV1)Flt:RFAmp__")
+}
+
+record(calc, "$(DEV1)Flt:RFAmp__") {
+	field(CALC, "((A&&(B>0.001)&&(C<0.001))?1:0)")
+	field(INPA, "$(DEV1)Flt:RFAmp_")
+	field(INPB, "$(P2)$(S2):AmpMean-I CPP")
+	field(INPC, "$(P1){$(DEV2)}Pwr:Fwd-I")
+	field(FLNK, "$(DEV1)Flt:RFAmp")
+}
+
+record(bo, "$(DEV1)Flt:RFAmp") {
+	field(OMSL, "closed_loop")
+	field(DOL,  "$(DEV1)Flt:RFAmp__")
+	field(DESC,"No output power!")
+	field(PINI,"YES")
+	field(ZNAM,"ok")
+	field(ZSV, "NO_ALARM")
+	field(ONAM,"FAULT")
+	field(OSV, "MAJOR")
+}
+

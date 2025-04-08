@@ -4,7 +4,7 @@ PORT=4050
 
 USER=softioc
 
-HOST=klyAmpAlarm
+HOST=rfctrl01-vm
 
 CHDIR="$CHDIR/iocBoot/iocklyAmpAlarm"
 EXEC="$CHDIR/st.cmd"

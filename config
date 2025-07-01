@@ -1,6 +1,6 @@
 NAME=klyAmpAlarm
 
-PORT=4051
+PORT=4081
 
 USER=softioc
 
